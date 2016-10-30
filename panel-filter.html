@@ -168,23 +168,37 @@ Custom property|Description| Default
 
 			properties: {
 
-				search : String,
+				/**
+				 * Variable for reset filters.
+				 */
+				search : {
+					type : String
+				},
 
-				numbersearch : Number,
+				/**
+				 * Variable for reset filters.
+				 */
+				numbersearch : {
+					type : Number
+				},
+
 			},
 
+			//listeners: {},
+
+			//observers: [],
+
+			/**
+			 * reset panel-filter.
+			 */
 			_resetfilter : function () {
 				this.search = "";
 				this.numbersearch = "";
-				// Polymer.dom(this.root).removeAttribute(checked);
 
-				// console.log("1" , this.$$('.checkchange'));
-				// console.log("2" , this.querySelectorAll('.checkchange'));
 				var select = this.querySelectorAll('.checkchange');
 				for (var i = 0; i<=5; i++) {
 					select[i].checked = false;
 				}
-
 
 				var dropselect = this.$$('#dropdown');
 				// console.log("1" , dropselect);
