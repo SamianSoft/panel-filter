@@ -1,18 +1,18 @@
-<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/polymer/polymer.html" />
 <link rel="import" href="bower_components/iron-icon/iron-icon.html" />
 <link rel="import" href="bower_components/paper-input/paper-input.html" />
-<link rel="import" href="filter-icons.html" />
 <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html" />
 <link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu.html" />
 <link rel="import" href="bower_components/paper-listbox/paper-listbox.html" />
 <link rel="import" href="bower_components/paper-item/paper-item.html" />
 <link rel="import" href="bower_components/paper-button/paper-button.html" />
-<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout-classes.html" />
+
+<link rel="import" href="filter-icons.html" />
 
 <!--
-`filter-element`
+`panel-filter`
 
-For example, the following code load filter-element and view in predefined template
+For example, the following code load panel-filter and view in predefined template
 
 
 		<filtercontainer>
@@ -60,21 +60,20 @@ Custom property|Description| Default
 @demo demo/index.html
 -->
 
-<dom-module id="filter-element">
+<dom-module id="panel-filter">
 	<template>
-		<style include="iron-flex iron-flex-alignment"></style>
 		<style>
 			:host {
 				display: block;
 				width: 50%;
 			}
 
-      .filtercontainer {
-        padding: 11px;
-        color: #757575;
-        background-color: #fff;
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-      }
+			.filtercontainer {
+				padding: 11px;
+				color: #757575;
+				background-color: #fff;
+				box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+			}
 
 			/*iron-icon {
 				padding-right: 5px;
@@ -165,7 +164,7 @@ Custom property|Description| Default
 	<script>
 		Polymer({
 
-			is: 'filter-element',
+			is: 'panel-filter',
 
 			properties: {
 
