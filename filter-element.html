@@ -56,11 +56,11 @@ Custom property|Description| Default
       }*/
 
       .checkbox {
-        margin: 4px 0;
+        margin: 10px 0;
       }
 
       .check {
-        margin-top: 10px;
+        margin-top: 18px;
       }
 
       paper-button {
@@ -72,7 +72,7 @@ Custom property|Description| Default
       }
 
       .button {
-        margin-top: 20px; 
+        margin-top: 40px; 
       }
 
       .button iron-icon {
@@ -102,7 +102,7 @@ Custom property|Description| Default
       </div>
 
       <div class="dropdown">
-        <paper-dropdown-menu label="Faghed">
+        <paper-dropdown-menu id="dropdown" label="Faghed">
           <paper-listbox class="dropdown-content">
             <paper-item>item 1</paper-item>
             <paper-item>item 2</paper-item>
@@ -147,16 +147,25 @@ Custom property|Description| Default
         search : String,
 
         numbersearch : Number,
-
-        x : Array,
       },
 
       _resetfilter : function () {
         this.search = "";
         this.numbersearch = "";
+        // Polymer.dom(this.root).removeAttribute(checked);
         
-        this.x = this.document.getElementByClassName("checkchange");
-        this.x.chacked = false;
+        // console.log("1" , this.$$('.checkchange'));
+        // console.log("2" , this.querySelectorAll('.checkchange'));
+        var select = this.querySelectorAll('.checkchange'); 
+        for (var i = 0; i<=5; i++) {
+          select[i].checked = false; 
+        }
+
+        
+        var dropselect = this.$$('#dropdown');
+        // console.log("1" , dropselect);
+        dropselect.selectedItem  = null;
+        // console.log("2" , dropselect);
       },
 
 
