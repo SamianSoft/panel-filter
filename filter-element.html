@@ -15,38 +15,38 @@
 For example, the following code load filter-element and view in predefined template
 
 
-    <filtercontainer>
-        <input>
-            <paper-input></paper-input>
-            <iron-icon></iron-icon>
-        </input>
-        <check>
-            <paper-checkbox></paper-checkbox>
-            <paper-checkbox></paper-checkbox>
-            <paper-checkbox></paper-checkbox>
-        </check>
-        <dropdown>
-            <paper-dropdown-menu>
-                <paper-listbox>
-                    <paper-item></paper-item>
-                    <paper-item></paper-item>
-                    <paper-item></paper-item>
-                    <paper-item></paper-item>
-                </paper-listbox>
-            </paper-dropdown-menu>
-        </dropdown>
-        <input>
-            <paper-input></paper-input>
-        </input>
-        <check>
-            <paper-checkbox></paper-checkbox>
-            <paper-checkbox></paper-checkbox>
-            <paper-checkbox></paper-checkbox>
-        </check>
-        <button>
-            <paper-button></paper-button>
-        </button>
-    </filtercontainer>
+		<filtercontainer>
+				<input>
+						<paper-input></paper-input>
+						<iron-icon></iron-icon>
+				</input>
+				<check>
+						<paper-checkbox></paper-checkbox>
+						<paper-checkbox></paper-checkbox>
+						<paper-checkbox></paper-checkbox>
+				</check>
+				<dropdown>
+						<paper-dropdown-menu>
+								<paper-listbox>
+										<paper-item></paper-item>
+										<paper-item></paper-item>
+										<paper-item></paper-item>
+										<paper-item></paper-item>
+								</paper-listbox>
+						</paper-dropdown-menu>
+				</dropdown>
+				<input>
+						<paper-input></paper-input>
+				</input>
+				<check>
+						<paper-checkbox></paper-checkbox>
+						<paper-checkbox></paper-checkbox>
+						<paper-checkbox></paper-checkbox>
+				</check>
+				<button>
+						<paper-button></paper-button>
+				</button>
+		</filtercontainer>
 
 
 
@@ -61,140 +61,140 @@ Custom property|Description| Default
 -->
 
 <dom-module id="filter-element">
-  <template>
-    <style include="iron-flex iron-flex-alignment"></style>
-    <style>
-      :host {
-        display: block;
-        width: 50%;
-      }
-
-      .filtercontainer {
-				padding: 11px;
-				color: #757575;
-				background-color: #fff;
-				box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+	<template>
+		<style include="iron-flex iron-flex-alignment"></style>
+		<style>
+			:host {
+				display: block;
+				width: 50%;
 			}
 
-      /*iron-icon {
-        padding-right: 5px;
-      }*/
-
-      .checkbox {
-        margin: 10px 0;
+      .filtercontainer {
+        padding: 11px;
+        color: #757575;
+        background-color: #fff;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
       }
 
-      .check {
-        margin-top: 18px;
-      }
+			/*iron-icon {
+				padding-right: 5px;
+			}*/
 
-      paper-button {
-        --paper-button: {
-          margin: 0;
-          padding: 8px;
-          font-size: 12px;
-        };
-      }
+			.checkbox {
+				margin: 10px 0;
+			}
 
-      .button {
-        margin-top: 40px;
-      }
+			.check {
+				margin-top: 18px;
+			}
 
-      .button iron-icon {
-        --iron-icon-width: 20px;
-        --iron-icon-height: 20px;
-      }
-    </style>
+			paper-button {
+				--paper-button: {
+					margin: 0;
+					padding: 8px;
+					font-size: 12px;
+				};
+			}
 
-    <div class="filtercontainer">
+			.button {
+				margin-top: 40px;
+			}
 
-      <div class="input">
-        <paper-input label="Search" type="text" value="{{search}}">
-          <iron-icon icon="search" prefix></iron-icon>
-        </paper-input>
-      </div>
+			.button iron-icon {
+				--iron-icon-width: 20px;
+				--iron-icon-height: 20px;
+			}
+		</style>
 
-      <div class="check">
-        <div class="checkbox">
-          <paper-checkbox class="checkchange" checked>Customer Name</paper-checkbox>
-        </div>
-        <div class="checkbox">
-          <paper-checkbox class="checkchange" >Shop Name</paper-checkbox>
-        </div>
-        <div class="checkbox">
-          <paper-checkbox class="checkchange" >Customer ERP Code</paper-checkbox>
-        </div>
-      </div>
+		<div class="filtercontainer">
 
-      <div class="dropdown">
-        <paper-dropdown-menu id="dropdown" label="Faghed">
-          <paper-listbox class="dropdown-content">
-            <paper-item>item 1</paper-item>
-            <paper-item>item 2</paper-item>
-            <paper-item>item 3</paper-item>
-            <paper-item>item 4</paper-item>
-          </paper-listbox>
-        </paper-dropdown-menu>
-      </div>
+			<div class="input">
+				<paper-input label="Search" type="text" value="{{search}}">
+					<iron-icon icon="search" prefix></iron-icon>
+				</paper-input>
+			</div>
 
-      <div class="input">
-        <paper-input type="number" value="{{numbersearch}}">
-        </paper-input>
-      </div>
+			<div class="check">
+				<div class="checkbox">
+					<paper-checkbox class="checkchange" checked>Customer Name</paper-checkbox>
+				</div>
+				<div class="checkbox">
+					<paper-checkbox class="checkchange" >Shop Name</paper-checkbox>
+				</div>
+				<div class="checkbox">
+					<paper-checkbox class="checkchange" >Customer ERP Code</paper-checkbox>
+				</div>
+			</div>
 
-      <div class="check">
-        <div class="checkbox">
-          <paper-checkbox class="checkchange" >Last visit</paper-checkbox>
-        </div>
-        <div class="checkbox">
-          <paper-checkbox class="checkchange">Last Order</paper-checkbox>
-        </div>
-        <div class="checkbox">
-          <paper-checkbox class="checkchange" checked>Account Balance</paper-checkbox>
-        </div>
-      </div>
+			<div class="dropdown">
+				<paper-dropdown-menu id="dropdown" label="Faghed">
+					<paper-listbox class="dropdown-content">
+						<paper-item>item 1</paper-item>
+						<paper-item>item 2</paper-item>
+						<paper-item>item 3</paper-item>
+						<paper-item>item 4</paper-item>
+					</paper-listbox>
+				</paper-dropdown-menu>
+			</div>
 
-      <div class="button">
-        <paper-button raised><iron-icon icon="check"></iron-icon>Search</paper-button>
-        <paper-button raised on-tap="_resetfilter"><iron-icon icon="close"></iron-icon>Reset</paper-button>
-      </div>
+			<div class="input">
+				<paper-input type="number" value="{{numbersearch}}">
+				</paper-input>
+			</div>
 
-    </div>
-  </template>
+			<div class="check">
+				<div class="checkbox">
+					<paper-checkbox class="checkchange" >Last visit</paper-checkbox>
+				</div>
+				<div class="checkbox">
+					<paper-checkbox class="checkchange">Last Order</paper-checkbox>
+				</div>
+				<div class="checkbox">
+					<paper-checkbox class="checkchange" checked>Account Balance</paper-checkbox>
+				</div>
+			</div>
 
-  <script>
-    Polymer({
+			<div class="button">
+				<paper-button raised><iron-icon icon="check"></iron-icon>Search</paper-button>
+				<paper-button raised on-tap="_resetfilter"><iron-icon icon="close"></iron-icon>Reset</paper-button>
+			</div>
 
-      is: 'filter-element',
+		</div>
+	</template>
 
-      properties: {
+	<script>
+		Polymer({
 
-        search : String,
+			is: 'filter-element',
 
-        numbersearch : Number,
-      },
+			properties: {
 
-      _resetfilter : function () {
-        this.search = "";
-        this.numbersearch = "";
-        // Polymer.dom(this.root).removeAttribute(checked);
+				search : String,
 
-        // console.log("1" , this.$$('.checkchange'));
-        // console.log("2" , this.querySelectorAll('.checkchange'));
-        var select = this.querySelectorAll('.checkchange');
-        for (var i = 0; i<=5; i++) {
-          select[i].checked = false;
-        }
+				numbersearch : Number,
+			},
 
+			_resetfilter : function () {
+				this.search = "";
+				this.numbersearch = "";
+				// Polymer.dom(this.root).removeAttribute(checked);
 
-        var dropselect = this.$$('#dropdown');
-        // console.log("1" , dropselect);
-        dropselect.selectedItem  = null;
-        // console.log("2" , dropselect);
-      },
-
+				// console.log("1" , this.$$('.checkchange'));
+				// console.log("2" , this.querySelectorAll('.checkchange'));
+				var select = this.querySelectorAll('.checkchange');
+				for (var i = 0; i<=5; i++) {
+					select[i].checked = false;
+				}
 
 
-    });
-  </script>
+				var dropselect = this.$$('#dropdown');
+				// console.log("1" , dropselect);
+				dropselect.selectedItem  = null;
+				// console.log("2" , dropselect);
+			},
+
+
+
+		});
+	</script>
 </dom-module>
