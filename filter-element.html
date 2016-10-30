@@ -1,8 +1,20 @@
-<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html" />
+<link rel="import" href="pwa-icons.html" />
 
 <!--
-`filter-element`
+`pwa-filter`
 
+For example, the following code load pwa-filter and view in predefined template
+
+    <pwa-filter></pwa-filter>
+    
+### Styling
+
+
+Custom property|Description| Default
+---------------|-----------|----------
+`--example`|Mixin applied to the `:host`|`{}`
 
 @demo demo/index.html 
 -->
@@ -13,8 +25,20 @@
       :host {
         display: block;
       }
+
+      .filtercontainer {
+				padding: 20px;
+				color: #757575;
+				background-color: #fff;
+				box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+			}
     </style>
-    <h2>Hello [[prop1]]</h2>
+    
+    <div class="filtercontainer">
+			
+			<paper-icon-button icon="search"></paper-icon-button>
+			
+		</div>
   </template>
 
   <script>
@@ -23,11 +47,13 @@
       is: 'filter-element',
 
       properties: {
-        prop1: {
-          type: String,
-          value: 'filter-element',
-        },
+        // prop1: {
+        //   type: String,
+        //   value: 'filter-element',
+        // },
       },
+
+
 
     });
   </script>
