@@ -2,7 +2,10 @@
   "name": "filter-element",
   "main": "filter-element.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.4.0"
+    "polymer": "Polymer/polymer#^1.4.0",
+    "paper-input": "PolymerElements/paper-input#^1.1.20",
+    "iron-icon": "PolymerElements/iron-icon#^1.0.12",
+    "paper-checkbox": "PolymerElements/paper-checkbox#^1.4.1"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
