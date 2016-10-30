@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`filter-element`
+
+
+@demo demo/index.html 
+-->
+
+<dom-module id="filter-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'filter-element',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'filter-element',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
