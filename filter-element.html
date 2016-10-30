@@ -2,14 +2,26 @@
 <link rel="import" href="bower_components/iron-icon/iron-icon.html" />
 <link rel="import" href="bower_components/paper-input/paper-input.html" />
 <link rel="import" href="filter-icons.html" />
-<!--<link rel="import" href="bower_components/" />-->
+<link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html" />
+<link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu.html" />
+<link rel="import" href="bower_components/paper-listbox/paper-listbox.html" />
+<link rel="import" href="bower_components/paper-item/paper-item.html" />
+<link rel="import" href="bower_components/paper-button/paper-button.html" />
 
 <!--
 `pwa-filter`
 
 For example, the following code load pwa-filter and view in predefined template
 
-    <pwa-filter></pwa-filter>
+    <pwa-filter>
+      <div class="filtercontainer">
+        <div class="input"></div>
+        <div class="check"></div>
+        <div class="dropdown"></div>
+        <div class="input"></div>
+        <div class="check"></div>
+      </div>
+    </pwa-filter>
     
 ### Styling
 
@@ -38,13 +50,80 @@ Custom property|Description| Default
       iron-icon {
         padding-right: 5px;
       }
+
+      .checkbox {
+        margin: 4px 0;
+      }
+
+      .check {
+        margin-top: 10px;
+      }
+
+      paper-button {
+        --paper-button: {
+          margin: 0;
+        };
+      }
+
+      .button {
+        margin-top: 10px; 
+      }
     </style>
     
     <div class="filtercontainer">
-			<paper-input label="Search" type="text">
-        <iron-icon icon="search" prefix></iron-icon>
-      </paper-input>
-		</div>
+			
+      <div class="input">
+        <paper-input label="Search" type="text">
+          <iron-icon icon="search" prefix></iron-icon>
+        </paper-input>
+      </div>
+      
+      <div class="check">
+        <div class="checkbox">
+          <paper-checkbox checked>Customer Name</paper-checkbox>
+        </div>
+        <div class="checkbox">
+          <paper-checkbox >Shop Name</paper-checkbox>
+        </div>
+        <div class="checkbox">
+          <paper-checkbox >Customer ERP Code</paper-checkbox>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <paper-dropdown-menu label="Faghed">
+          <paper-listbox class="dropdown-content">
+            <paper-item>item 1</paper-item>
+            <paper-item>item 2</paper-item>
+            <paper-item>item 3</paper-item>
+            <paper-item>item 4</paper-item>
+          </paper-listbox>
+        </paper-dropdown-menu>
+      </div>
+
+      <div class="input">
+        <paper-input type="number">
+        </paper-input>
+      </div>
+
+      <div class="check">
+        <div class="checkbox">
+          <paper-checkbox >Last visit</paper-checkbox>
+        </div>
+        <div class="checkbox">
+          <paper-checkbox >Last Order</paper-checkbox>
+        </div>
+        <div class="checkbox">
+          <paper-checkbox checked>Account Balance</paper-checkbox>
+        </div>
+      </div>
+
+      <div class="button">
+        <paper-button raised><iron-icon icon="check"></iron-icon>Search</paper-button>
+        <paper-button raised><iron-icon icon="close"></iron-icon>Reset</paper-button>
+      </div>
+		
+    </div>
   </template>
 
   <script>
