@@ -7,21 +7,23 @@
 <link rel="import" href="bower_components/paper-listbox/paper-listbox.html" />
 <link rel="import" href="bower_components/paper-item/paper-item.html" />
 <link rel="import" href="bower_components/paper-button/paper-button.html" />
+<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout-classes.html" />
 
 <!--
-`pwa-filter`
+`filter-element`
 
-For example, the following code load pwa-filter and view in predefined template
+For example, the following code load filter-element and view in predefined template
 
-    <pwa-filter>
+    <filter-element>
       <div class="filtercontainer">
         <div class="input"></div>
         <div class="check"></div>
         <div class="dropdown"></div>
         <div class="input"></div>
         <div class="check"></div>
+        <div class="button"></div>
       </div>
-    </pwa-filter>
+    </filter-element>
     
 ### Styling
 
@@ -35,21 +37,23 @@ Custom property|Description| Default
 
 <dom-module id="filter-element">
   <template>
+    <style include="iron-flex iron-flex-alignment"></style>
     <style>
       :host {
         display: block;
       }
 
       .filtercontainer {
-				padding: 20px;
+        width: 50%;
+				padding: 15px;
 				color: #757575;
 				background-color: #fff;
 				box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 			}
 
-      iron-icon {
+      /*iron-icon {
         padding-right: 5px;
-      }
+      }*/
 
       .checkbox {
         margin: 4px 0;
@@ -62,31 +66,32 @@ Custom property|Description| Default
       paper-button {
         --paper-button: {
           margin: 0;
+          padding: 8px;
         };
       }
 
       .button {
-        margin-top: 10px; 
+        margin-top: 20px; 
       }
     </style>
     
     <div class="filtercontainer">
 			
       <div class="input">
-        <paper-input label="Search" type="text">
+        <paper-input label="Search" type="text" value="{{search}}">
           <iron-icon icon="search" prefix></iron-icon>
         </paper-input>
       </div>
       
       <div class="check">
         <div class="checkbox">
-          <paper-checkbox checked>Customer Name</paper-checkbox>
+          <paper-checkbox class="checkchange" checked>Customer Name</paper-checkbox>
         </div>
         <div class="checkbox">
-          <paper-checkbox >Shop Name</paper-checkbox>
+          <paper-checkbox class="checkchange" >Shop Name</paper-checkbox>
         </div>
         <div class="checkbox">
-          <paper-checkbox >Customer ERP Code</paper-checkbox>
+          <paper-checkbox class="checkchange" >Customer ERP Code</paper-checkbox>
         </div>
       </div>
 
@@ -102,25 +107,25 @@ Custom property|Description| Default
       </div>
 
       <div class="input">
-        <paper-input type="number">
+        <paper-input type="number" value="{{numbersearch}}">
         </paper-input>
       </div>
 
       <div class="check">
         <div class="checkbox">
-          <paper-checkbox >Last visit</paper-checkbox>
+          <paper-checkbox class="checkchange" >Last visit</paper-checkbox>
         </div>
         <div class="checkbox">
-          <paper-checkbox >Last Order</paper-checkbox>
+          <paper-checkbox class="checkchange">Last Order</paper-checkbox>
         </div>
         <div class="checkbox">
-          <paper-checkbox checked>Account Balance</paper-checkbox>
+          <paper-checkbox class="checkchange" checked>Account Balance</paper-checkbox>
         </div>
       </div>
 
       <div class="button">
         <paper-button raised><iron-icon icon="check"></iron-icon>Search</paper-button>
-        <paper-button raised><iron-icon icon="close"></iron-icon>Reset</paper-button>
+        <paper-button raised on-tap="_resetfilter"><iron-icon icon="close"></iron-icon>Reset</paper-button>
       </div>
 		
     </div>
@@ -132,10 +137,20 @@ Custom property|Description| Default
       is: 'filter-element',
 
       properties: {
-        // prop1: {
-        //   type: String,
-        //   value: 'filter-element',
-        // },
+        
+        search : String,
+
+        numbersearch : Number,
+
+        x : Array,
+      },
+
+      _resetfilter : function () {
+        this.search = "";
+        this.numbersearch = "";
+        
+        this.x = document.getElementByClassName("checkchange");
+        this.x.chacked = false;
       },
 
 
