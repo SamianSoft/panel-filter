@@ -57,7 +57,7 @@ Custom property|Description| Default
 ---------------|-----------|----------
 `--example`|Mixin applied to the `:host`|`{}`
 
-@demo demo/index.html 
+@demo demo/index.html
 -->
 
 <dom-module id="filter-element">
@@ -66,7 +66,7 @@ Custom property|Description| Default
     <style>
       :host {
         display: block;
-        width: 50%;        
+        width: 50%;
       }
 
       .filtercontainer {
@@ -97,7 +97,7 @@ Custom property|Description| Default
       }
 
       .button {
-        margin-top: 40px; 
+        margin-top: 40px;
       }
 
       .button iron-icon {
@@ -105,15 +105,15 @@ Custom property|Description| Default
         --iron-icon-height: 20px;
       }
     </style>
-    
+
     <div class="filtercontainer">
-			
+
       <div class="input">
         <paper-input label="Search" type="text" value="{{search}}">
           <iron-icon icon="search" prefix></iron-icon>
         </paper-input>
       </div>
-      
+
       <div class="check">
         <div class="checkbox">
           <paper-checkbox class="checkchange" checked>Customer Name</paper-checkbox>
@@ -158,7 +158,7 @@ Custom property|Description| Default
         <paper-button raised><iron-icon icon="check"></iron-icon>Search</paper-button>
         <paper-button raised on-tap="_resetfilter"><iron-icon icon="close"></iron-icon>Reset</paper-button>
       </div>
-		
+
     </div>
   </template>
 
@@ -168,7 +168,7 @@ Custom property|Description| Default
       is: 'filter-element',
 
       properties: {
-        
+
         search : String,
 
         numbersearch : Number,
@@ -178,15 +178,15 @@ Custom property|Description| Default
         this.search = "";
         this.numbersearch = "";
         // Polymer.dom(this.root).removeAttribute(checked);
-        
+
         // console.log("1" , this.$$('.checkchange'));
         // console.log("2" , this.querySelectorAll('.checkchange'));
-        var select = this.querySelectorAll('.checkchange'); 
+        var select = this.querySelectorAll('.checkchange');
         for (var i = 0; i<=5; i++) {
-          select[i].checked = false; 
+          select[i].checked = false;
         }
 
-        
+
         var dropselect = this.$$('#dropdown');
         // console.log("1" , dropselect);
         dropselect.selectedItem  = null;

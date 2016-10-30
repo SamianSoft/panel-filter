@@ -12,7 +12,7 @@ format that includes a **type**, a **scope** and a **subject**:
 <type>(<scope>): <subject>
 <BLANK LINE>
 <body>
-```
+``` 
 
 The **header** is mandatory and the **scope** of the header is optional.
 
