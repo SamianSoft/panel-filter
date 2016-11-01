@@ -14,7 +14,6 @@
 
 For example, the following code load panel-filter and view in predefined template
 
-
 		<filtercontainer>
 			<input>
 				<paper-input></paper-input>
@@ -60,7 +59,7 @@ For example, the following code load panel-filter and view in predefined templat
 				width: 50%;
 			}
 
-			.filtercontainer {
+			.panel-filter-container {
 				padding: 11px;
 				color: #757575;
 				background-color: #fff;
@@ -71,11 +70,11 @@ For example, the following code load panel-filter and view in predefined templat
 				padding-right: 5px;
 			}*/
 
-			.checkbox {
+			.panel-filter-checkbox {
 				margin: 10px 0;
 			}
 
-			.check {
+			.panel-filter-check {
 				margin-top: 18px;
 			}
 
@@ -87,37 +86,37 @@ For example, the following code load panel-filter and view in predefined templat
 				};
 			}
 
-			.button {
+			.panel-filter-button {
 				margin-top: 40px;
 			}
 
-			.button iron-icon {
+			.panel-filter-button iron-icon {
 				--iron-icon-width: 20px;
 				--iron-icon-height: 20px;
 			}
 		</style>
 
-		<div class="filtercontainer">
+		<div class="panel-filter-container">
 
-			<div class="input">
+			<div class="panel-filter-input">
 				<paper-input label="Search" type="text" value="{{search}}">
 					<iron-icon icon="search" prefix></iron-icon>
 				</paper-input>
 			</div>
 
-			<div class="check">
-				<div class="checkbox">
+			<div class="panel-filter-check">
+				<div class="panel-filter-checkbox">
 					<paper-checkbox class="checkchange" checked>Customer Name</paper-checkbox>
 				</div>
-				<div class="checkbox">
+				<div class="panel-filter-checkbox">
 					<paper-checkbox class="checkchange">Shop Name</paper-checkbox>
 				</div>
-				<div class="checkbox">
+				<div class="panel-filter-checkbox">
 					<paper-checkbox class="checkchange">Customer ERP Code</paper-checkbox>
 				</div>
 			</div>
 
-			<div class="dropdown">
+			<div class="panel-filter-dropdown">
 				<paper-dropdown-menu id="dropdown" label="Faghed">
 					<paper-listbox class="dropdown-content">
 						<paper-item>item 1</paper-item>
@@ -128,24 +127,24 @@ For example, the following code load panel-filter and view in predefined templat
 				</paper-dropdown-menu>
 			</div>
 
-			<div class="input">
+			<div class="panel-filter-input">
 				<paper-input type="number" value="{{numbersearch}}">
 				</paper-input>
 			</div>
 
-			<div class="check">
-				<div class="checkbox">
+			<div class="panel-filter-check">
+				<div class="panel-filter-checkbox">
 					<paper-checkbox class="checkchange">Last visit</paper-checkbox>
 				</div>
-				<div class="checkbox">
+				<div class="panel-filter-checkbox">
 					<paper-checkbox class="checkchange">Last Order</paper-checkbox>
 				</div>
-				<div class="checkbox">
+				<div class="panel-filter-checkbox">
 					<paper-checkbox class="checkchange" checked>Account Balance</paper-checkbox>
 				</div>
 			</div>
 
-			<div class="button">
+			<div class="panel-filter-button">
 				<paper-button raised><iron-icon icon="check"></iron-icon>Search</paper-button>
 				<paper-button raised on-tap="_resetfilter"><iron-icon icon="close"></iron-icon>Reset</paper-button>
 			</div>
@@ -197,8 +196,6 @@ For example, the following code load panel-filter and view in predefined templat
 				dropselect.selectedItem  = null;
 				// console.log("2" , dropselect);
 			},
-
-
 
 		});
 	</script>
