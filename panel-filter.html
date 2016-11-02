@@ -6,7 +6,8 @@
 <link rel="import" href="bower_components/paper-listbox/paper-listbox.html"/>
 <link rel="import" href="bower_components/paper-item/paper-item.html"/>
 <link rel="import" href="bower_components/paper-button/paper-button.html"/>
-
+<link rel="import" href="bower_components/paper-button/paper-button.html"/>
+<link rel="import" href="bower_components/paper-styles/color.html"/>
 <link rel="import" href="filter-icons.html"/>
 
 <!--
@@ -26,10 +27,6 @@
 				background-color: #fff;
 				box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 			}
-
-			/*iron-icon {
-				padding-right: 5px;
-			}*/
 
 			.panel-filter-checkbox {
 				margin: 10px 0;
@@ -54,7 +51,21 @@
 			.panel-filter-button iron-icon {
 				--iron-icon-width: 20px;
 				--iron-icon-height: 20px;
+
 			}
+
+      .iron-icon-green {
+        --iron-icon : {
+          color: var(--google-green-500);
+        };
+      }
+
+      .iron-icon-red {
+        --iron-icon : {
+          color: var(--google-red-500);
+        };
+      }
+
 		</style>
 
 		<div>
@@ -105,8 +116,8 @@
 			</div>
 
 			<div class="panel-filter-button">
-				<paper-button raised><iron-icon icon="check"></iron-icon>Search</paper-button>
-				<paper-button raised on-tap="_resetfilter"><iron-icon icon="close"></iron-icon>Reset</paper-button>
+				<paper-button raised><iron-icon  class="iron-icon-green" icon="check"></iron-icon>Search</paper-button>
+				<paper-button raised on-tap="_resetfilter"><iron-icon class="iron-icon-red" icon="close"></iron-icon>Reset</paper-button>
 			</div>
 		</div>
 	</template>
