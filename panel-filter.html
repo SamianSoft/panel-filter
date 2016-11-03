@@ -6,36 +6,41 @@
 <link rel="import" href="../paper-listbox/paper-listbox.html"/>
 <link rel="import" href="../paper-item/paper-item.html"/>
 <link rel="import" href="../paper-button/paper-button.html"/>
-
+<link rel="import" href="../paper-styles/color.html"/>
+<link rel="import" href="../paper-material/paper-material.html"/>
 <link rel="import" href="filter-icons.html"/>
 
 <!--
 `panel-filter`
+
+### Styling
+
+The following custom properties and mixins are available for styling.
+
+Custom property   | Description                         | Default
+------------------|-------------------------------------|----------
+`--panel-filter`  | Mixin applied to the `panel-filter` | `{}`
 
 @demo demo/index.html
 -->
 
 <dom-module id="panel-filter">
 	<template>
+		<style include="paper-material"></style>
 		<style>
 			:host {
 				display: block;
 				width: 50%;
 				padding: 11px;
-				color: #757575;
-				background-color: #fff;
-				box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+
+				@apply(--panel-filter);
 			}
 
-			/*iron-icon {
-				padding-right: 5px;
-			}*/
-
-			.panel-filter-checkbox {
+			.filter-checkbox {
 				margin: 10px 0;
 			}
 
-			.panel-filter-check {
+			.filter-check {
 				margin-top: 18px;
 			}
 
@@ -47,36 +52,38 @@
 				};
 			}
 
-			.panel-filter-button {
+			.filter-button {
 				margin-top: 40px;
 			}
 
-			.panel-filter-button iron-icon {
+			.filter-button iron-icon {
 				--iron-icon-width: 20px;
 				--iron-icon-height: 20px;
+
 			}
+
 		</style>
 
 		<div>
-			<div class="panel-filter-input">
+			<div class="filter-input">
 				<paper-input label="Search" type="text" value="{{search}}">
 					<iron-icon icon="search" prefix></iron-icon>
 				</paper-input>
 			</div>
 
-			<div class="panel-filter-check">
-				<div class="panel-filter-checkbox">
+			<div class="filter-check">
+				<div class="filter-checkbox">
 					<paper-checkbox class="checkchange" checked>Customer Name</paper-checkbox>
 				</div>
-				<div class="panel-filter-checkbox">
+				<div class="filter-checkbox">
 					<paper-checkbox class="checkchange">Shop Name</paper-checkbox>
 				</div>
-				<div class="panel-filter-checkbox">
+				<div class="filter-checkbox">
 					<paper-checkbox class="checkchange">Customer ERP Code</paper-checkbox>
 				</div>
 			</div>
 
-			<div class="panel-filter-dropdown">
+			<div class="filter-dropdown">
 				<paper-dropdown-menu id="dropdown" label="Faghed">
 					<paper-listbox class="dropdown-content">
 						<paper-item>item 1</paper-item>
@@ -87,24 +94,24 @@
 				</paper-dropdown-menu>
 			</div>
 
-			<div class="panel-filter-input">
+			<div class="filter-input">
 				<paper-input type="number" value="{{numbersearch}}">
 				</paper-input>
 			</div>
 
-			<div class="panel-filter-check">
-				<div class="panel-filter-checkbox">
+			<div class="filter-check">
+				<div class="filter-checkbox">
 					<paper-checkbox class="checkchange">Last visit</paper-checkbox>
 				</div>
-				<div class="panel-filter-checkbox">
+				<div class="filter-checkbox">
 					<paper-checkbox class="checkchange">Last Order</paper-checkbox>
 				</div>
-				<div class="panel-filter-checkbox">
+				<div class="filter-checkbox">
 					<paper-checkbox class="checkchange" checked>Account Balance</paper-checkbox>
 				</div>
 			</div>
 
-			<div class="panel-filter-button">
+			<div class="filter-button">
 				<paper-button raised><iron-icon icon="check"></iron-icon>Search</paper-button>
 				<paper-button raised on-tap="_resetfilter"><iron-icon icon="close"></iron-icon>Reset</paper-button>
 			</div>
@@ -132,6 +139,20 @@
 					type : Number
 				},
 
+				/**
+				* The z-depth of this element, from 0-5. Setting to 0 will remove the
+				* shadow, and each increasing number greater than 0 will be "deeper"
+				* than the last.
+				*
+				* @attribute elevation
+				* @type number
+				* @default 1
+				*/
+				elevation: {
+					type: Number,
+					reflectToAttribute: true,
+					value: 1
+				},
 			},
 
 			//listeners: {},
