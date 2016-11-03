@@ -7,6 +7,7 @@
 <link rel="import" href="bower_components/paper-item/paper-item.html"/>
 <link rel="import" href="bower_components/paper-button/paper-button.html"/>
 <link rel="import" href="bower_components/paper-styles/color.html"/>
+<link rel="import" href="bower_components/paper-material/paper-material.html"/>
 <link rel="import" href="filter-icons.html"/>
 
 <!--
@@ -16,22 +17,23 @@
 
 The following custom properties and mixins are available for styling.
 
-Custom property   |Description                  |Default
-------------------|-----------------------------|----------
-`--panel-filter`  |Mixin applied to the `panel-filter` |`{}`
+Custom property   | Description                         | Default
+------------------|-------------------------------------|----------
+`--panel-filter`  | Mixin applied to the `panel-filter` | `{}`
 
 @demo demo/index.html
 -->
 
 <dom-module id="panel-filter">
 	<template>
+		<style include="paper-material"></style>
 		<style>
 			:host {
 				display: block;
 				width: 50%;
 				padding: 11px;
 
-        @apply(--panel-filter);
+				@apply(--panel-filter);
 			}
 
 			.filter-checkbox {
@@ -137,6 +139,11 @@ Custom property   |Description                  |Default
 					type : Number
 				},
 
+				elevation: {
+					type: Number,
+					reflectToAttribute: true,
+					value: 1
+				},
 			},
 
 			//listeners: {},
