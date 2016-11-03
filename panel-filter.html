@@ -16,9 +16,9 @@
 
 The following custom properties and mixins are available for styling.
 
-Custom property|Description|Default
----------------|-------------------|----------
-`--primary-color`|Mixin applied to the `:host`|`currentcolor`
+Custom property   |Description                  |Default
+------------------|-----------------------------|----------
+`--panel-filter`  |Mixin applied to the `panel-filter` |`{}`
 
 @demo demo/index.html
 -->
@@ -30,19 +30,8 @@ Custom property|Description|Default
 				display: block;
 				width: 50%;
 				padding: 11px;
-				color: #757575;
-				background-color: #fff;
-				box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 
         @apply(--panel-filter);
-			}
-
-			/*.color {
-				color: var(--primary-color);
-			}*/
-
-			.filter-input iron-icon {
-				color: var(--primary-color);
 			}
 
 			.filter-checkbox {
@@ -74,25 +63,25 @@ Custom property|Description|Default
 		</style>
 
 		<div>
-			<div class="panel-filter-input">
+			<div class="filter-input">
 				<paper-input label="Search" type="text" value="{{search}}">
 					<iron-icon icon="search" prefix></iron-icon>
 				</paper-input>
 			</div>
 
-			<div class="panel-filter-check">
-				<div class="panel-filter-checkbox">
+			<div class="filter-check">
+				<div class="filter-checkbox">
 					<paper-checkbox class="checkchange" checked>Customer Name</paper-checkbox>
 				</div>
-				<div class="panel-filter-checkbox">
+				<div class="filter-checkbox">
 					<paper-checkbox class="checkchange">Shop Name</paper-checkbox>
 				</div>
-				<div class="panel-filter-checkbox">
+				<div class="filter-checkbox">
 					<paper-checkbox class="checkchange">Customer ERP Code</paper-checkbox>
 				</div>
 			</div>
 
-			<div class="panel-filter-dropdown">
+			<div class="filter-dropdown">
 				<paper-dropdown-menu id="dropdown" label="Faghed">
 					<paper-listbox class="dropdown-content">
 						<paper-item>item 1</paper-item>
@@ -103,24 +92,24 @@ Custom property|Description|Default
 				</paper-dropdown-menu>
 			</div>
 
-			<div class="panel-filter-input">
+			<div class="filter-input">
 				<paper-input type="number" value="{{numbersearch}}">
 				</paper-input>
 			</div>
 
-			<div class="panel-filter-check">
-				<div class="panel-filter-checkbox">
+			<div class="filter-check">
+				<div class="filter-checkbox">
 					<paper-checkbox class="checkchange">Last visit</paper-checkbox>
 				</div>
-				<div class="panel-filter-checkbox">
+				<div class="filter-checkbox">
 					<paper-checkbox class="checkchange">Last Order</paper-checkbox>
 				</div>
-				<div class="panel-filter-checkbox">
+				<div class="filter-checkbox">
 					<paper-checkbox class="checkchange" checked>Account Balance</paper-checkbox>
 				</div>
 			</div>
 
-			<div class="panel-filter-button">
+			<div class="filter-button">
 				<paper-button raised><iron-icon icon="check"></iron-icon>Search</paper-button>
 				<paper-button raised on-tap="_resetfilter"><iron-icon icon="close"></iron-icon>Reset</paper-button>
 			</div>
