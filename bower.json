@@ -3,7 +3,7 @@
 	"authors": [
 		"PTC Corporation <info@ptc.co.ir>"
 	],
-	"description": "iOrder PWA panel filter",
+	"description": "PWA elements panel filter",
 	"main": "panel-filter.html",
 	"keywords": [
 		"ptc",
