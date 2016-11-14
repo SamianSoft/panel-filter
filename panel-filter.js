@@ -11,14 +11,14 @@
 					/**
 					* Variable for reset filters.
 					*/
-					search : {
-						type : String
+					search: {
+						type: String
 					},
 
 					/**
 					 * Variable for reset filters.
 					 */
-					numbersearch : {
+					numbersearch: {
 						type : Number
 					},
 
@@ -35,29 +35,27 @@
 						type: Number,
 						reflectToAttribute: true,
 						value: 1
-					},
-
-				},
-
-				/**
-				 * reset panel-filter.
-				 */
-				_resetfilter : function () {
-					this.search = "";
-					this.numbersearch = "";
-
-					var select = this.querySelectorAll('.checkchange');
-					for (var i = 0; i<=5; i++) {
-						select[i].checked = false;
 					}
+				}
+			};
+		} // end config
 
-					var dropselect = this.$$('#dropdown');
-					// console.log("1" , dropselect);
-					dropselect.selectedItem  = null;
-					// console.log("2" , dropselect);
-				},
+		/**
+		 * reset panel-filter.
+		 */
+		_resetfilter () {
+			this.search = "";
+			this.numbersearch = "";
 
+			var select = this.querySelectorAll('.checkchange');
+			for (var i = 0; i<=5; i++) {
+				select[i].checked = false;
 			}
+
+			var dropselect = this.$$('#dropdown');
+			// console.log("1" , dropselect);
+			dropselect.selectedItem  = null;
+			// console.log("2" , dropselect);
 		}
 	}
 
